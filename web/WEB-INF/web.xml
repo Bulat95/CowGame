@@ -24,4 +24,24 @@
         <servlet-name>list</servlet-name>
         <url-pattern>/list</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>game</servlet-name>
+        <servlet-class>app.servlets.GameServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>game</servlet-name>
+        <url-pattern>/game</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>authorization</servlet-name>
+        <servlet-class>app.servlets.AuthorizationServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>authorization</servlet-name>
+        <url-pattern>/authorization</url-pattern>
+    </servlet-mapping>
 </web-app>

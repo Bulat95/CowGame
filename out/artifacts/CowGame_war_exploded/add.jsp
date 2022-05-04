@@ -7,7 +7,7 @@
 
 <body class="w3-light-grey">
 <div class="w3-container w3-blue-grey w3-opacity w3-right-align">
-    <h1>Cow and Bull Game!</h1>
+    <h1>Super app!</h1>
 </div>
 
 <div class="w3-container w3-padding">
