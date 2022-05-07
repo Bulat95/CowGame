@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "login": "1",
+      "password": "1",
+      "average_value": 1
+    },
+    {
+      "login": "2",
+      "password": "2",
+      "average_value": 2
+    }
+  ]
+}
