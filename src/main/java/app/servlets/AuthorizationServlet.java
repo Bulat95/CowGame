@@ -1,8 +1,7 @@
 package app.servlets;
+import app.database.Connection;
 import app.database.Person;
 import app.entities.User;
-
-import app.database.Base;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,11 +15,9 @@ import java.util.List;
 
 
 public class AuthorizationServlet extends HttpServlet {
-    Base base = new Base();
+    Connection connection = new Connection();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        base.start();
-        System.out.println(base.Users.size());
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/authorization.jsp");
         requestDispatcher.forward(req, resp);
     }
@@ -28,9 +25,7 @@ public class AuthorizationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
         String password = req.getParameter("pass");
-        if (base.Users.size() == 0){
-            req.setAttribute("base.Users.size()", base.Users.size());
-        }
+
 
 
         req.setAttribute("userName", name);
