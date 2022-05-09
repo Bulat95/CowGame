@@ -19,14 +19,13 @@ public class AddServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String login = req.getParameter("login");
+        String name = req.getParameter("name");
         String password = req.getParameter("pass");
-        int average_num = 0;
-        User user = new User(login, password, average_num);
+        User user = new User(name, password);
         Model model = Model.getInstance();
         model.add(user);
 
-        req.setAttribute("userName", login);
+        req.setAttribute("userName", name);
         doGet(req, resp);
     }
 }

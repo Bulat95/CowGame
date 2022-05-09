@@ -1,26 +1,23 @@
 package app.entities;
 
 public class User {
-    private String login;
+    private String name;
     private String password;
-    private int average_num;
 
     public User() {
     }
 
-
-    public User(String login, String password, int average_num) {
-        this.login = login;
+    public User(String name, String password) {
+        this.name = name;
         this.password = password;
-        this.average_num = average_num;
     }
 
     public String getName() {
-        return login;
+        return name;
     }
 
-    public void setName(String login) {
-        this.login = login;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -30,20 +27,12 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    public int getAverage_num() {
-        return average_num;
-    }
-
-    public void setAverage_num(int average_num) {
-        this.average_num = average_num;
-    }
 
     @Override
     public String toString() {
         return "User{" +
-                "name='" + login + '\'' +
+                "name='" + name + '\'' +
                 ", password='" + password + '\'' +
-                "average_num='" + average_num +
                 '}';
     }
 
@@ -54,14 +43,14 @@ public class User {
 
         User user = (User) o;
 
-        if (login != null ? !login.equals(user.login) : user.login != null) return false;
+        if (name != null ? !name.equals(user.name) : user.name != null) return false;
         return password != null ? password.equals(user.password) : user.password == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = login != null ? login.hashCode() : 0;
+        int result = name != null ? name.hashCode() : 0;
         result = 31 * result + (password != null ? password.hashCode() : 0);
         return result;
     }
