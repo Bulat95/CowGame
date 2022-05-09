@@ -1,5 +1,6 @@
 package app.servlets;
 
+import app.database.Connection;
 import app.entities.User;
 import app.model.Model;
 
@@ -21,9 +22,16 @@ public class AddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String name = req.getParameter("name");
         String password = req.getParameter("pass");
-        User user = new User(name, password);
+        int average_num = 0;
+        User user = new User(name, password, average_num);
         Model model = Model.getInstance();
         model.add(user);
+        Connection conn = new Connection();
+        try {
+            conn.writeToJson(model.getUsers());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         req.setAttribute("userName", name);
         doGet(req, resp);
