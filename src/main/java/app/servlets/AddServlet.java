@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 public class AddServlet extends HttpServlet {
     @Override
@@ -25,7 +26,7 @@ public class AddServlet extends HttpServlet {
         int average_num = 0;
         User user = new User(name, password, average_num);
         Model model = Model.getInstance();
-        model.add(user);
+        model.checkInitArray(user);
         Connection conn = new Connection();
         try {
             conn.writeToJson(model.getUsers());

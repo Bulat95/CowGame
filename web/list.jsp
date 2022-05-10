@@ -17,6 +17,7 @@
             <h2>Пользователи</h2>
         </div>
         <%
+
             List<String> names = (List<String>) request.getAttribute("userNames");
 
             if (names != null && !names.isEmpty()) {

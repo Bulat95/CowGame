@@ -1,17 +1,7 @@
 [
   {
-    "login": "Bulat",
-    "password": "pass",
-    "average_num": 0
-  },
-  {
-    "login": "TEST",
-    "password": "root",
-    "average_num": 0
-  },
-  {
-    "login": "132",
-    "password": "23",
+    "login": "2",
+    "password": "",
     "average_num": 0
   }
 ]
