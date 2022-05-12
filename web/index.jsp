@@ -1,3 +1,4 @@
+<%@ page import="app.model.Model" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +19,12 @@
         <button class="w3-btn w3-hover-green w3-round-large" onclick="location.href='/add'">Регистрация</button>
         <button class="w3-btn w3-hover-green w3-round-large" onclick="location.href='/authorization'">Войти</button>
         <button class="w3-btn w3-hover-green w3-round-large" onclick="location.href='/game'">Игра</button>
+    </div>
+    <div>
+        <%
+            out.print(Model.actUser.getName());
+            System.out.println(Model.actUser.getName());
+        %>
     </div>
 </div>
 </body>

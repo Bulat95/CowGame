@@ -1,4 +1,6 @@
 <%@ page import="java.util.List" %>
+<%@ page import="app.entities.User" %>
+<%@ page import="app.model.Model" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -17,22 +19,41 @@
             <h2>Пользователи</h2>
         </div>
         <%
+//            List<String> names = (List<String>) request.getAttribute("userNames");
+            Model model = Model.getInstance();
 
-            List<String> names = (List<String>) request.getAttribute("userNames");
-
-            if (names != null && !names.isEmpty()) {
-                out.println("<ul class=\"w3-ul\">");
-                for (String s : names) {
-                    out.println("<li class=\"w3-hover-sand\">" + s + "</li>");
+            if (model != null && model.getUsers() != null){
+                for (User user : model.getUsers()) {
+                    out.println("<ul class=\"w3-ul\">");
+                    for (int i = 0; i < model.getUsers().size(); i++) {
+                        out.println("<li class=\"w3-hover-sand\">" + user.getName() + " (" +user.getAverage_num() + ")" + "</li>");
+                    }
+                    out.println("</ul>");
                 }
-                out.println("</ul>");
-
-            } else out.println("<div class=\"w3-panel w3-red w3-display-container w3-card-4 w3-round\">\n"
+            }
+            else out.println("<div class=\"w3-panel w3-red w3-display-container w3-card-4 w3-round\">\n"
                     +
                     "   <span onclick=\"this.parentElement.style.display='none'\"\n" +
                     "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-red w3-border w3-border-red w3-hover-border-grey\">×</span>\n" +
                     "   <h5>Пользователей нет - будь первым!</h5>\n" +
                     "</div>");
+
+
+
+
+//            if (names != null && !names.isEmpty()) {
+//                out.println("<ul class=\"w3-ul\">");
+//                for (String s : names) {
+//                    out.println("<li class=\"w3-hover-sand\">" + s + "</li>");
+//                }
+//                out.println("</ul>");
+
+//            } else out.println("<div class=\"w3-panel w3-red w3-display-container w3-card-4 w3-round\">\n"
+//                    +
+//                    "   <span onclick=\"this.parentElement.style.display='none'\"\n" +
+//                    "   class=\"w3-button w3-margin-right w3-display-right w3-round-large w3-hover-red w3-border w3-border-red w3-hover-border-grey\">×</span>\n" +
+//                    "   <h5>Пользователей нет - будь первым!</h5>\n" +
+//                    "</div>");
         %>
     </div>
 </div>

@@ -27,10 +27,13 @@ public class AuthorizationServlet extends HttpServlet {
         String password = req.getParameter("pass");
 
 
+
         List<User> users = Model.getInstance().getUsers();
         boolean hasUser = false;
         for (User user : users) {
             if (user.getName().equals(name) && user.getPassword().equals(password)) {
+                Model model = Model.getInstance();
+                model.activeUser(name);
                 hasUser = true;
                 break;
             }

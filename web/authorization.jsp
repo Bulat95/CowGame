@@ -1,6 +1,5 @@
 
 <%@ page import="java.util.List" %>
-<%@ page import="app.database.Person" %>
 <%@ page import="app.model.Model" %>
 <%@ page import="app.entities.User" %>
 <%@ page import="static java.lang.System.out" %>

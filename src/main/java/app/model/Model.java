@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 public class Model {
     private static Model instance;
+    public static User actUser = new User("Guest", "", 0, 0);
 
     static {
         try {
@@ -17,7 +18,6 @@ public class Model {
             e.printStackTrace();
         }
     }
-
     private List<User> model;
     public static Model getInstance() {
         return instance;
@@ -53,5 +53,15 @@ public class Model {
                 .map(User::getName)
                 .collect(Collectors.toList());
     }
-    public User actUser;
+    public void activeUser(String name){
+        List<User> users = Model.getInstance().getUsers();
+        for (User user : users) {
+            if (user.getName().equals(name)) {
+                actUser = user;
+            }
+            else {
+                actUser = new User("Guest", "", 0,0);
+            }
+        }
+    }
 }

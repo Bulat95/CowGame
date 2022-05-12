@@ -1,15 +1,19 @@
 package app.gameplay;
 
-import java.util.Arrays;
 import java.util.Random;
-import java.util.Scanner;
+
 
 public class Gameplay {
     Tools tl = new Tools();
     public int [] start(){
         return tl.getNumber();
     }
+
     public String general(String num, int [] arr) {
+        if (num.equals("0")){
+
+            return null;
+        }
         return tl.check(arr, tl.convertToArr(num));
     }
 }
@@ -20,12 +24,13 @@ class Tools {
             int local = getRandomNum();
             if (correctNum(array, local)){
                 array[i] = local;
-                System.out.print(local);
+                System.out.print(local );
             }
             else{
                 i--;
             }
         }
+        System.out.print("\n");
         return array;
     }//Компьютер загадал
     int getRandomNum(){
@@ -71,4 +76,5 @@ class Tools {
         }
         return arr;
     }
+
 }

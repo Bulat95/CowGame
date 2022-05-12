@@ -1,4 +1,4 @@
-<%--
+<%@ page import="app.gameplay.Gameplay" %><%--
   Created by IntelliJ IDEA.
   User: Alfa
   Date: 17.04.2022
@@ -22,13 +22,14 @@
             </label>
 
             <button type="submit" class="w3-btn w3-blue w3-round-large w3-margin-bottom">Ввести</button>
+                <label1>Введите "0", если хотите перезагрузить игру</label1>
             </form>
             <label>
                 <%
-                    if (request.getAttribute("value") != null) {
-                        out.println(request.getAttribute("value"));
-                    }
 
+                    if (request.getAttribute("value") != null) {
+                        out.println("<h2>" + request.getAttribute("value")  +"</h2>");
+                    }
                 %>
             </label>
             <div class="w3-container w3-grey w3-opacity w3-right-align w3-padding">

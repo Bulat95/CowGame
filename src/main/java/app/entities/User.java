@@ -4,6 +4,15 @@ public class User {
     private String login;
     private String password;
     private int average_num;
+    private int numberOfGames;
+
+    public int getNumberOfGames() {
+        return numberOfGames;
+    }
+
+    public void setNumberOfGames(int numberOfGames) {
+        this.numberOfGames = numberOfGames;
+    }
 
     public int getAverage_num() {
         return average_num;
@@ -16,7 +25,7 @@ public class User {
     public User() {
     }
 
-    public User(String login, String password, int average_num) {
+    public User(String login, String password, int average_num, int numberOfGames) {
         this.login = login;
         this.password = password;
         this.average_num = average_num;

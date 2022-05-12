@@ -1,7 +1,8 @@
 [
   {
-    "login": "2",
-    "password": "",
-    "average_num": 0
+    "login": "Tester",
+    "password": "123",
+    "average_num": 0,
+    "numberOfGames": 0
   }
 ]

@@ -24,7 +24,8 @@ public class AddServlet extends HttpServlet {
         String name = req.getParameter("name");
         String password = req.getParameter("pass");
         int average_num = 0;
-        User user = new User(name, password, average_num);
+        int numberOfGames = 0;
+        User user = new User(name, password, average_num, numberOfGames);
         Model model = Model.getInstance();
         model.checkInitArray(user);
         Connection conn = new Connection();
