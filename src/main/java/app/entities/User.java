@@ -1,41 +1,44 @@
 package app.entities;
 
 public class User {
-    private String login;
+    private String login = "null";
     private String password;
-    private int average_num;
-    private int numberOfGames;
+    private int averageNum;
+    private int numbersOfGames;
+    private int numbersTrying;
+
+    public int getNumbersTrying() {
+        return numbersTrying;
+    }
+
+    public void setNumbersTrying(int numbersTrying) {
+        this.numbersTrying = numbersTrying;
+    }
 
     public int getNumberOfGames() {
-        return numberOfGames;
+        return numbersOfGames;
     }
 
     public void setNumberOfGames(int numberOfGames) {
-        this.numberOfGames = numberOfGames;
+        this.numbersOfGames = numberOfGames;
     }
 
     public int getAverage_num() {
-        return average_num;
+        return averageNum;
     }
 
     public void setAverage_num(int average_num) {
-        this.average_num = average_num;
-    }
-
-    public User() {
-    }
-
-    public User(String login, String password, int average_num, int numberOfGames) {
-        this.login = login;
-        this.password = password;
-        this.average_num = average_num;
+        this.averageNum = average_num;
     }
 
     public String getName() {
+        if (login == null){
+            return null;
+        }
         return login;
     }
 
-    public void setName(String name) {
+    public void setName(String login) {
         this.login = login;
     }
 
@@ -45,6 +48,17 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public User() {
+    }
+
+    public User(String login, String password, int averageNum, int numberOfGames, int numbersTrying) {
+        this.login = login;
+        this.password = password;
+        this.averageNum = averageNum;
+        this.numbersOfGames = numberOfGames;
+        this.numbersTrying = numbersTrying;
     }
 
     @Override

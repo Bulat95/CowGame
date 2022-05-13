@@ -1,4 +1,5 @@
 <%@ page import="app.model.Model" %>
+<%@ page import="app.model.ActualUser" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,8 +23,12 @@
     </div>
     <div>
         <%
-            out.print(Model.actUser.getName());
-            System.out.println(Model.actUser.getName());
+            ActualUser actualUser = ActualUser.getInstance();
+            if (actualUser.getName() == null){
+                actualUser.setName("Guest");
+            }
+            out.print(actualUser.getName());
+            System.out.println(actualUser.getName());
         %>
     </div>
 </div>

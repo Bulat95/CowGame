@@ -1,8 +1,23 @@
 [
   {
+    "login": "admin",
+    "password": "root",
+    "averageNum": 0,
+    "numbersOfGames": 0,
+    "numbersTrying": 0
+  },
+  {
+    "login": "Ivanesko",
+    "password": "1",
+    "averageNum": 0,
+    "numbersOfGames": 0,
+    "numbersTrying": 0
+  },
+  {
     "login": "Tester",
     "password": "123",
-    "average_num": 0,
-    "numberOfGames": 0
+    "averageNum": 0,
+    "numbersOfGames": 0,
+    "numbersTrying": 0
   }
 ]

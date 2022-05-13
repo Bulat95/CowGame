@@ -12,11 +12,14 @@ import java.io.IOException;
 import java.util.List;
 
 public class ListServlet extends HttpServlet {
+    Model model;
+    List<String> names;
+    List<String> namesAndResult;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Model model = Model.getInstance();
-        List<String> names = model.list();
-        req.setAttribute("userNames", names);
+        model = Model.getInstance();
+        names = model.list(); // Заполнение массива пользователей
+        req.setAttribute("userNames", namesAndResult);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/list.jsp");
         requestDispatcher.forward(req, resp);
     }
