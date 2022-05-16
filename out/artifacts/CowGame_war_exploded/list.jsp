@@ -26,7 +26,7 @@
                     out.println("<ul class=\"w3-ul\">");
                     int result = 0;
                     if (user.getNumberOfGames() != 0){
-                        result = user.getNumbersTrying() / user.getNumberOfGames();
+                        result = Model.getInstance().writeAndGetResult();
                     }
                     out.println("<li class=\"w3-hover-sand\">" + user.getName() + " (" + result + ")" + "</li>");
                     out.println("</ul>");

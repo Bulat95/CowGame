@@ -1,5 +1,5 @@
 <%@ page import="app.model.Model" %>
-<%@ page import="app.model.ActualUser" %>
+<%@ page import="app.entities.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,14 +22,10 @@
         <button class="w3-btn w3-hover-green w3-round-large" onclick="location.href='/game'">Игра</button>
     </div>
     <div>
-        <%
-            ActualUser actualUser = ActualUser.getInstance();
-            if (actualUser.getName() == null){
-                actualUser.setName("Guest");
-            }
-            out.print(actualUser.getName());
-            System.out.println(actualUser.getName());
-        %>
+    <%
+        User user = Model.getActUser();
+        out.print(user.getName());
+    %>
     </div>
 </div>
 </body>

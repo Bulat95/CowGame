@@ -1,7 +1,6 @@
 package app.servlets;
 
 import app.entities.User;
-import app.model.ActualUser;
 import app.model.Model;
 
 import javax.servlet.RequestDispatcher;
@@ -17,7 +16,7 @@ public class AuthorizationServlet extends HttpServlet {
     String password;
     List<User> users;
     boolean hasUser;
-    Model model;
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,9 +32,7 @@ public class AuthorizationServlet extends HttpServlet {
         hasUser = false;
         for (User user : users) {
             if (user.getName().equals(login) && user.getPassword().equals(password)) {
-                model = Model.getInstance();
-                ActualUser actualUser = new ActualUser(user);
-                actualUser.setName(user.getName());
+                Model.setActUser(user);
                 hasUser = true;
                 break;
             }

@@ -1,6 +1,5 @@
 package app.servlets;
 import app.gameplay.Gameplay;
-import app.model.ActualUser;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,7 +16,6 @@ public class GameServlet extends HttpServlet {
     int [] arr;
     int count = 1;
     int nOfGames = 0;
-    ActualUser actualUser = ActualUser.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,15 +27,11 @@ public class GameServlet extends HttpServlet {
         value = req.getParameter("value");
         if (!startOn || value.equals("0")) {
             start();
-            actualUser.setNumberOfGames(nOfGames);
         }
         req.setAttribute("value", gp.general(value, arr) + "  Попытка: " + count);
         count++;
-        actualUser.setNumberOfGames(count);
         doGet(req, resp);
     }
-
-
 
     void start() {
         startOn = true;

@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class Model {
     private static Model instance;
     private List<User> model;
-//    public static User actUser = new User("Guest", "", 0, 0,0);
+    public static User actUser = new User("Guest", "", 0, 0,0);
 
     static {
         try {
@@ -22,6 +22,26 @@ public class Model {
 
     public static Model getInstance() {
         return instance;
+    }
+    public static User getActUser(){
+        return actUser;
+    }
+    public int writeAndGetResult() {
+        List<User> models = getUsers();
+        int res = 0;
+        for (User userf : models) {
+            if (actUser.getName().equals(userf.getName())) {
+                userf.setNumbersTrying(userf.getNumbersTrying() + actUser.getNumbersTrying());
+                userf.setNumberOfGames(userf.getNumberOfGames() + actUser.getNumberOfGames());
+                userf.setAverage_num(userf.getNumbersTrying() / userf.getNumbersTrying());
+                res = userf.getAverage_num();
+            }
+        }
+        return res;
+    }
+
+    public static  void setActUser(User user){
+        actUser = user;
     }
 
     public Model() throws Exception {

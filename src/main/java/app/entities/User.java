@@ -1,11 +1,28 @@
 package app.entities;
 
 public class User {
-    private String login = "null";
+
+    private String login = "Guest";
     private String password;
     private int averageNum;
     private int numbersOfGames;
     private int numbersTrying;
+
+    public String getName() {
+        return login;
+    }
+
+    public void setName(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public int getNumbersTrying() {
         return numbersTrying;
@@ -31,24 +48,6 @@ public class User {
         this.averageNum = average_num;
     }
 
-    public String getName() {
-        if (login == null){
-            return null;
-        }
-        return login;
-    }
-
-    public void setName(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public User() {
     }
@@ -87,4 +86,6 @@ public class User {
         result = 31 * result + (password != null ? password.hashCode() : 0);
         return result;
     }
+
+
 }

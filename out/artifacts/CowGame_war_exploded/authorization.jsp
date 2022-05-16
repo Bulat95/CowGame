@@ -43,7 +43,6 @@
         Object error = request.getAttribute("error");
 
         if (error != null && (Boolean) error) {
-
             out.println("<div class=\"w3-panel w3-red w3-display-container w3-card-4 w3-round\">\n"
 
                     +
@@ -52,7 +51,12 @@
                     "   <h5>Ошибка авторизации</h5>\n" +
                     "</div>");
         }
+        else {
+            User user = Model.getActUser();
+            out.print(user.getName());
+        }
     %>
+
     <div class="w3-card-4">
         <div class="w3-container w3-center w3-green">
             <h2>Вход</h2>
